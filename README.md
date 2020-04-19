@@ -51,7 +51,15 @@ Note: To understand AWS networking in detail theres a fantastic video from AWS i
 
 ### Secret and Access keys
 
-Lastly we'll 
+Lastly if not already done so we need to create a IAM secret key and and access key.
+
+To create a new secret access key for your root account, use the [security credentials page](https://console.aws.amazon.com/iam/home?#security_credential). Expand the Access Keys section, and then click Create New Root Key.
+
+To create a new secret access key for an IAM user, open the [IAM console](https://console.aws.amazon.com/iam/home?region=us-east-1#home). Click Users in the Details pane, click the appropriate IAM user, and then click Create Access Key on the Security Credentials tab.
+
+```
+Note: If you already have the maximum of two access keys—active or inactive—you must delete one first before proceeding.
+```
 
 ## Ansible playbook
 
