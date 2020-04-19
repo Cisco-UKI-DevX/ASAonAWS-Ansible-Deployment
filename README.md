@@ -55,9 +55,11 @@ We'll also need to define a keypair to generate a certificate to have access to 
 
 ### Secret and Access keys
 
-Lastly if not already done so we need to create a IAM secret key and and access key. This can be done from the use the [security credentials page](https://console.aws.amazon.com/iam/home?#/security_credentials) and going to the "Access keys (access key ID and secret access key)" drop down then selecting generate new access key. As can be seen from the annimation below:
+Lastly if not already done so we need to create a IAM secret key and and access key. This can be done from the use the [security credentials page](https://console.aws.amazon.com/iam/home?#/security_credentials) and going to the "Access keys (access key ID and secret access key)" drop down then selecting generate new access key. As can be seen from the animation below:
 
 ![](images/access-key.gif)
+
+Keep a note of those values we'll need them shortly
 
 ```
 Note: If you already have the maximum of two access keys—active or inactive—you must delete one first before proceeding.
