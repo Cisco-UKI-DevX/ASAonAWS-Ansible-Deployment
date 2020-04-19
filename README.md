@@ -24,9 +24,14 @@ Before we get started on this guide you'll need a few things. First being an AWS
 
 In order to deploy our ASA we'll need at least a VPC and 3 subnets. Our playbook should then configure the other required resources such as elastic IP addresses and network interfaces, but for now lets go through what we need to create.
 
-In every region you should have a default VPC which we'll build our subnets in, this should have a IP address block of 172.31.0.0/16 which we we'll build our subnets from
+In every region you should have a default VPC which we'll build our subnets in, this should have a IP address block of 172.31.0.0/16 which we we'll build our subnets from. Feel free to specify your own address pools here however you can also use the ones below.
 
-By the end we should have 3 subnets of 
+To build these subnets from the AWS management console select VPC from services under "networking and content delivery" then hit the subn(ets resource. Follow the process to then create the subnets like our animations below:
+
+![](images/subnet-create1.gif)
+![](images/subnet-create2.gif)
+
+By the end you should have the three following subnets
 
 172.31.0.0/20 - inside
 
@@ -34,13 +39,17 @@ By the end we should have 3 subnets of
 
 172.31.0.255.0/24 - management
 
+Take a note of the subnetid beginnging in "subnet-" we'll need that later for the playbook.
+
 To understand AWS networking in detail theres a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
 
 ### An AMI image
 
+### Keypair
+
 ### Secret and Access keys
 
-Lastly
+Lastly we'll 
 
 ## Ansible playbook
 
