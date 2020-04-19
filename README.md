@@ -99,12 +99,18 @@ I know this playbook could be made shorter and simplified with roles. However I 
     
     
   - name: Deploy virtual ASA
+  
+    description: Deploy the ami image for the ASA and map our interfaces to it
 
 
   - name: get public IP for our interface
+  
+    description: Find the public IP that was assigned to our interfaces so we can use them later in the playbook
 
 
   - name: get public IP for our interface
+  
+    description: Find the public IP that was assigned to our interfaces so we can use them later in the playbook
 
 
   - name: Wait for SSH to come up
@@ -113,13 +119,17 @@ I know this playbook could be made shorter and simplified with roles. However I 
 
 
   - name: configure ASA interface managememt
+  
+    description: Configure the management interface on the ASA
 
 
   - name: configure ASA interface inside
 
+    description: Configure the inside interface on the ASA
+
 
   - name: configure ASA interface outside
-    description: Optional but good practice for ongoing management of device
+    description: Configure the outside interface on the ASA
 
 
   - name: enable ADSM
@@ -127,7 +137,7 @@ I know this playbook could be made shorter and simplified with roles. However I 
     
     
   - name: render a template onto an ASA device
-    description: Place a config onto the device, in our case for client SSL VPN access
+    description: Place a config onto the device, in our case for client SSL VPN access. The config that will be copied is the asa-template.j2 file.
 
 
 ### Configure environment variables
@@ -142,7 +152,7 @@ export ANSIBLE_HOST_KEY_CHECKING=False
 
 ![](images/environment.gif)
 
-Remember not to share these keys with anyone, they secure your AWS account and someone could use them to spin up all sorts so keep them safe.
+Remember not to share these keys with anyone, they secure your AWS account and someone could use them to spin up all sorts so keep them safe. As soon as I finished writing this guide I rotated the the keys for my account as you should on a regular basis.
 
 ### Run the playbook
 
