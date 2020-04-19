@@ -132,7 +132,19 @@ I know this playbook could be made shorter and simplified with roles. However I 
 
 ### Configure environment variables
 
+We do need to provide Ansible with our AWS credentials probably the simplest way to do this, whilst maintaining some level of security is to set them as an environment variable in your shell. This can be done by running the below commands, obviously replacing the placeholders below for your ACCESS/SECRET key we generated in the pre-requesites. Set host checking to false too to allow Ansible to log into our ASA without seeing the RSA fingerprint before.
+
+```
+export AWS_ACCESS_KEY_ID='<YOUR ACCESS KEY>'
+export AWS_SECRET_ACCESS_KEY='<YOUR SECRET KEY>'
+export ANSIBLE_HOST_KEY_CHECKING=False
+```
+
+Remember not to share these keys with anyone, they secure your AWS account and someone could use them to spin up all sorts so keep them safe.
+
 ### Run the playbook
+
+Lastly
 
 ## Final thoughts
 
