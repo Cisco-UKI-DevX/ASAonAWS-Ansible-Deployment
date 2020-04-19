@@ -27,7 +27,9 @@ In every region you should have a default VPC which we'll build our subnets in, 
 By the end we should have 3 subnets of 
 
 172.31.0.0/20 - inside
+
 172.31.0.254.0/24 - outside
+
 172.31.0.255.0/24 - management
 
 To understand AWS networking in detail theres a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
