@@ -165,11 +165,25 @@ Now all thats left to do is run our playbook, within the playbook you should see
 ansible-playbook aws-asa.yaml -vvvv
 ```
 
+The -vvvv flag is optional but this enables verbose mode which will make things easier should you have to troubleshoot.
+
 ![](images/asa-deploy.gif)
 
-This will take anywhere upto 15 minutes, so go take a break.
+This will take anywhere upto 15 minutes, so go take a break. When you come back you should have something like below
 
-The -vvvv flag is optional but this enables verbose mode which will make things easier should you have to troubleshoot.
+![](images/asa-deploy-done.gif)
+
+Now the image has been deployed and should now be running lets go to AWS EC2 and find out the outside IP address of our device (NOT OUR MANAGEMENT, which will be the primary IP shown). 
+
+![](images/get-ip.gif)
+
+
+If our config has rendered correctly you should be able to navigate to https://<IP-OF-OUTSIDE-INTERFACE> and login with the username specified in the config (username netadmin password P@ssw0rd01) unless you've changed that and download the anyconnect VPN image. Alternatively if you have the Anyconnect client installed just put the IP address of the outside interface into the field and connet. You can see both options from the graphics below.
+  
+![](images/web-browser.gif)
+
+
+![](images/anyconnect.gif)
 
 ## Final thoughts
 
