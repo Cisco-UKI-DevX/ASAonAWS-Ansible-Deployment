@@ -146,7 +146,17 @@ Remember not to share these keys with anyone, they secure your AWS account and s
 
 ### Run the playbook
 
-Lastly
+Now all thats left to do is run our playbook, within the playbook you should see some placeholders where you will have to set your own variables for your environment, these incude username and password of the asa, AWS region, subnetID's of the networks we created earlier and the AMI id of our image. Fill all these in for the playbook to run sucessfully and then run the below command as can be seen from the animation
+
+```
+ansible-playbook aws-asa.yaml -vvvv
+```
+
+![](images/asa-deploy.gif)
+
+This will take anywhere upto 15 minutes, so go take a break.
+
+The -vvvv flag is optional but this enables verbose mode which will make things easier should you have to troubleshoot.
 
 ## Final thoughts
 
