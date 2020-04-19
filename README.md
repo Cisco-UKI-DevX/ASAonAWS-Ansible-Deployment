@@ -171,7 +171,7 @@ This will take anywhere upto 15 minutes, so go take a break. When you come back 
 
 ![](images/asa-deploy-done.png)
 
-Now the image has been deployed and should now be running lets go to AWS EC2 and find out the outside IP address of our device (NOT OUR MANAGEMENT, which will be the primary IP shown). 
+Now the image has been deployed and should now be running lets go to AWS EC2 and find out the outside IP address of our device (NOT the management, which will be the primary IP shown). 
 
 ![](images/get-ip.gif)
 
@@ -184,3 +184,6 @@ If our config has rendered correctly you should be able to navigate to https://<
 
 ## Final thoughts
 
+This guide should provide a way for you to begin to understand the how services such as the ASAv can deployed on platforms like AWS, clearly you will need to tailor this to your exact environment but what we wanted to demonstrate here was the concept of NFV on cloud platforms and how quickly these services can be spun up with common automation tools such as Ansible. As mentioned previously his guide could adapted for other virtualised network appliances such as eWLC or CSR1000v with relative ease, should you have any usecases around this it would be great to hear. Having playbooks that automate these kind of processes allow easy deployment as we've shown but also integration into CICD pipelines organisations may have.
+
+Please provide feedback on this guide if any sections are unclear and if you have any problems raise a quick issue and I'll do our best to support.
