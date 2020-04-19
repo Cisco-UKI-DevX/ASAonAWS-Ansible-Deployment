@@ -45,8 +45,6 @@ Take a note of the subnetid beginnging in "subnet-" we'll need that later for th
 Note: To understand AWS networking in detail theres a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
 ```
 
-### An AMI image
-
 ### Keypair
 
 We'll also need to define a keypair to generate a certificate to have access to our device. This can be done by selecting the keypairs service within the EC2 menus under "Network & Security" and following the create keypair wizard
