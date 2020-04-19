@@ -18,7 +18,7 @@
   - ec2_eni:
       region: "{{ reg }}"
       description: management
-      subnet_id: subnet-08476e8940e2177a1
+      subnet_id: <<management subnet here>>
       security_groups: management
       state: present
     register: eni_1
@@ -26,14 +26,14 @@
   - ec2_eni:
       region: "{{ reg }}"
       description: outside
-      subnet_id: subnet-0ac6a5b49a33ac1b1
+      subnet_id: <<outside subnet here>>
       state: present
     register: eni_2
 
 
   - ec2_eni:
       region: "{{ reg }}"
-      subnet_id: subnet-038357c6f807d15fd
+      subnet_id: <<inside subnet here>>
       description: inside
       state: present
     register: eni_3
