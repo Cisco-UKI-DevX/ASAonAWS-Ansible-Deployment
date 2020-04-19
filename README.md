@@ -66,3 +66,38 @@ Note: If you already have the maximum of two access keys—active or inactive—
 ## Ansible playbook
 
 ### Walkthrough
+
+  - name: Create management interface
+
+  - name: Create outside interface
+
+  - name: Create inside interface
+
+  - name: allocate a new elastic IP inside a VPC in region
+
+  - name: allocate a new elastic IP inside a VPC in region
+
+  - name: Deploy virtual ASA
+
+  - name: get public IP for our interface
+
+  - name: get public IP for our interface
+
+  - name: Wait for SSH to come up
+
+  - name: Insert a line at the end of a file.
+
+  - name: configure ASA interface managememt
+
+  - name: configure ASA interface inside
+
+  - name: configure ASA interface outside
+    description: Optional but good practice for ongoing management of device
+
+  - name: enable ADSM
+    description: Optional but good practice for ongoing management of device
+    
+  - name: render a template onto an ASA device
+    description: Place a config onto the device, in our case for client SSL VPN access
+
+
