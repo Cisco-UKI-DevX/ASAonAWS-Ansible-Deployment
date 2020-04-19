@@ -128,3 +128,9 @@ I know this playbook could be made shorter and simplified with roles. However I 
     description: Place a config onto the device, in our case for client SSL VPN access
 
 
+### Configure environment variables
+
+### Run the playbook
+
+## Final thoughts
+
