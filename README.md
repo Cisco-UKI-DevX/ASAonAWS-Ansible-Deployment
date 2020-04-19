@@ -14,6 +14,8 @@ In this guide we’re going to show a way to automate much of that deployment to
 Disclaimer: In this guide we're using a sample base config for enabling SSL VPN functionality on our ASA. The exact config will depend based on your individual requirements for your organisation. We're looking to demonstrate the process here of how such functionality can be automated here but your config can be easily modified by changing the asa_template.j2 file included in this repo
 ```
 
+This approach to spinning up services is an excellent demonstration of NFV and could also be applied to other services such as routing, wireless LAN controllers and any other services that could be deployed in cloud platforms with a couple of small tweaks.
+
 ## AWS Prerequisites
 
 Before we get started on this guide you'll need a few things. First being an AWS account [which you can sign up for here](https://aws.amazon.com). Once you've signed up for an AWS account we've then got a few bits and pieces to configure. The first being networking
