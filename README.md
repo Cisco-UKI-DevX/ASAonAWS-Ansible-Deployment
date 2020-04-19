@@ -51,12 +51,9 @@ Note: To understand AWS networking in detail theres a fantastic video from AWS i
 
 ### Secret and Access keys
 
-Lastly if not already done so we need to create a IAM secret key and and access key.
+Lastly if not already done so we need to create a IAM secret key and and access key. This can be done from the use the [security credentials page](https://console.aws.amazon.com/iam/home?#/security_credentials) and going to the "Access keys (access key ID and secret access key)" drop down then selecting generate new access key. As can be seen from the annimation below:
 
-To create a new secret access key for your root account, use the [security credentials page](https://console.aws.amazon.com/iam/home?#security_credential). Expand the Access Keys section, and then click Create New Root Key.
-
-To create a new secret access key for an IAM user, open the [IAM console](https://console.aws.amazon.com/iam/home?region=us-east-1#home). Click Users in the Details pane, click the appropriate IAM user, and then click Create Access Key on the Security Credentials tab.
-
+![](access-key.gif)
 ```
 Note: If you already have the maximum of two access keys—active or inactive—you must delete one first before proceeding.
 ```
