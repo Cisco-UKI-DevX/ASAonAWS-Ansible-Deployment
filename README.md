@@ -16,7 +16,7 @@ Disclaimer: In this guide we're using a sample base config for enabling SSL VPN 
 
 ## AWS Prerequisites
 
-Before we get started on this guide you'll need a few things. First being an AWS account ![which you can sign up for here](https://aws.amazon.com). Once you've signed up for an AWS account the main
+Before we get started on this guide you'll need a few things. First being an AWS account [which you can sign up for here](https://aws.amazon.com). Once you've signed up for an AWS account the main
 
 ### Networking
 
