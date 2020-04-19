@@ -72,38 +72,57 @@ I know this playbook could be made shorter and simplified with roles. However I 
 ### Walkthrough
 
   - name: Create management interface
+    
     description: Create an network interface resource within AWS for our management within the region specified
+
 
   - name: Create outside interface
+    
     description: Create an network interface resource within AWS for our management within the region specified
+
 
   - name: Create inside interface
+   
     description: Create an network interface resource within AWS for our management within the region specified
 
-  - name: allocate a new elastic IP inside a VPC in region
-    description: Allocate a public IP within our region to be assigned later to our device
 
   - name: allocate a new elastic IP inside a VPC in region
+   
     description: Allocate a public IP within our region to be assigned later to our device
+
+
+  - name: allocate a new elastic IP inside a VPC in region
+    
+    description: Allocate a public IP within our region to be assigned later to our device
+    
     
   - name: Deploy virtual ASA
 
-  - name: get public IP for our interface
 
   - name: get public IP for our interface
+
+
+  - name: get public IP for our interface
+
 
   - name: Wait for SSH to come up
+    
     description: Self explanitory, wait for the ASA to boot and for SSH access before we can do our next config
+
 
   - name: configure ASA interface managememt
 
+
   - name: configure ASA interface inside
+
 
   - name: configure ASA interface outside
     description: Optional but good practice for ongoing management of device
 
+
   - name: enable ADSM
     description: Optional but good practice for ongoing management of device
+    
     
   - name: render a template onto an ASA device
     description: Place a config onto the device, in our case for client SSL VPN access
