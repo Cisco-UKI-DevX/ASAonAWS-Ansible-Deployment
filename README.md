@@ -129,14 +129,17 @@ I know this playbook could be made shorter and simplified with roles. However I 
 
 
   - name: configure ASA interface outside
+    
     description: Configure the outside interface on the ASA
 
 
   - name: enable ADSM
+    
     description: Optional but good practice for ongoing management of device
     
     
   - name: render a template onto an ASA device
+    
     description: Place a config onto the device, in our case for client SSL VPN access. The config that will be copied is the asa-template.j2 file.
 
 
