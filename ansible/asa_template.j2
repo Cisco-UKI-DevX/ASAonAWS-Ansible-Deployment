@@ -1,0 +1,48 @@
+!
+!
+webvpn
+enable outside
+anyconnect image disk0:/anyconnect-macos-4.8.03036-webdeploy-k9.pkg 1
+anyconnect enable
+tunnel-group-list enable
+!
+!
+http redirect outside 80
+!
+ip local pool Pool-RemoteAcessVPN 172.16.0.0-172.16.0.10 mask 255.255.255.0
+!
+!
+access-list ACL-RemoteAcessVPN standard permit 172.31.0.0 255.255.0.0
+!
+!
+group-policy GP-RemoteAcessVPN internal
+group-policy GP-RemoteAcessVPN attributes
+wins-server none
+dns-server value 10.0.0.2 10.0.0.3
+vpn-idle-timeout 86400
+vpn-session-timeout 86400
+vpn-tunnel-protocol ssl-client ssl-clientless
+split-tunnel-policy tunnelspecified
+split-tunnel-network-list value ACL-RemoteAcessVPN
+default-domain value techspacekh.com
+!
+webvpn
+anyconnect mtu 1300
+anyconnect ssl keepalive 20
+anyconnect ask enable default anyconnect
+!
+!
+tunnel-group TechSpaceKH type remote-access
+tunnel-group TechSpaceKH general-attributes
+address-pool Pool-RemoteAcessVPN
+default-group-policy GP-RemoteAcessVPN
+tunnel-group TechSpaceKH webvpn-attributes
+group-alias TechSpaceKH enable
+!
+!
+!
+username netadmin password P@ssw0rd01 privilege 15
+username netadmin attributes
+vpn-simultaneous-logins 10
+service-type remote-access
+!

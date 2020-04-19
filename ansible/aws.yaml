@@ -1,0 +1,138 @@
+
+- name: Create ASA instance
+  hosts: localhost
+  vars:
+    reg: "us-east-1"
+    cli:
+      username: cisco
+      password: cisco
+      host: "{{ eip.public_ip }}"
+      authorize: yes
+      auth_pass: cisco
+
+
+  gather_facts: False
+
+  tasks:
+
+  - ec2_eni:
+      region: "{{ reg }}"
+      description: management
+      subnet_id: subnet-08476e8940e2177a1
+      security_groups: management
+      state: present
+    register: eni_1
+
+  - ec2_eni:
+      region: "{{ reg }}"
+      description: outside
+      subnet_id: subnet-0ac6a5b49a33ac1b1
+      state: present
+    register: eni_2
+
+
+  - ec2_eni:
+      region: "{{ reg }}"
+      subnet_id: subnet-038357c6f807d15fd
+      description: inside
+      state: present
+    register: eni_3
+
+
+  - name: allocate a new elastic IP inside a VPC in region
+    ec2_eip:
+      region: "{{ reg }}"
+      device_id: "{{ eni_1.interface.id }}"
+      in_vpc: yes
+    register: eip
+
+  - name: allocate a new elastic IP inside a VPC in region
+    ec2_eip:
+      region: "{{ reg }}"
+      device_id: "{{ eni_2.interface.id }}"
+      in_vpc: yes
+
+  - name: Deploy virtual ASA
+    ec2:
+      region: "{{ reg }}"
+      key_name: asa
+      instance_type: m4.xlarge
+      image: ami-076f62aed48ff1c7f
+      wait: yes
+      network_interfaces: ["{{ eni_1.interface.id }}","{{ eni_2.interface.id }}","{{ eni_3.interface.id }}"]
+    register: device
+
+
+  - ec2_eni_facts:
+      region: "{{ reg }}"
+      filters:
+        network-interface-id: "{{ eni_2.interface.id }}"
+    register: eni_2_facts
+
+  - ec2_eni_facts:
+      region: "{{ reg }}"
+      filters:
+        network-interface-id: "{{ eni_3.interface.id }}"
+    register: eni_3_facts
+
+
+  - name: Wait for SSH to come up
+    wait_for:
+      host: "{{ eip.public_ip }}"
+      port: 22
+      delay: 60
+      timeout: 900
+      state: started
+    with_items: "{{ eip.public_ip }}"
+
+
+  - name: Insert a line at the end of a file.
+    lineinfile:
+      path: inventory-aws
+      line: "{{ eip.public_ip }}"
+
+  - name: configure ASA interface managememt
+    asa_config:
+      lines:
+        - management-only
+      parents: ["interface management0/0"]
+      provider: "{{ cli }}"
+
+  - name: configure ASA interface inside
+    asa_config:
+      lines:
+        - description inside
+        - nameif inside
+        - security-level 100
+        - ip address dhcp
+        - no shut
+      parents: ["interface gigabitEthernet0/1"]
+      provider: "{{ cli }}"
+
+  - name: configure ASA interface outside
+    asa_config:
+      lines:
+        - description outside
+        - nameif outside
+        - security-level 0
+        - ip address dhcp setroute
+        - no shut
+      parents: ["interface gigabitEthernet0/0"]
+      provider: "{{ cli }}"
+
+
+  - name: enable ADSM
+    asa_config:
+      lines:
+        - http server enable
+        - http 0.0.0.0 0.0.0.0 management
+      provider: "{{ cli }}"
+
+  - name: render a template onto an ASA device
+    asa_config:
+      username: cisco
+      password: cisco
+      host: "{{ eip.public_ip }}"
+      authorize: yes
+      auth_pass: cisco
+      src: "asa_template.j2"
