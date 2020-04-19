@@ -140,6 +140,8 @@ export AWS_SECRET_ACCESS_KEY='<YOUR SECRET KEY>'
 export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
+[](images/environment.gif)
+
 Remember not to share these keys with anyone, they secure your AWS account and someone could use them to spin up all sorts so keep them safe.
 
 ### Run the playbook
