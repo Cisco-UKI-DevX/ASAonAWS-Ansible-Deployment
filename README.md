@@ -41,7 +41,9 @@ By the end you should have the three following subnets
 
 Take a note of the subnetid beginnging in "subnet-" we'll need that later for the playbook.
 
-To understand AWS networking in detail theres a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
+```
+Note: To understand AWS networking in detail theres a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
+```
 
 ### An AMI image
 
