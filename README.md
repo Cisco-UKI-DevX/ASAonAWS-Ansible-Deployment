@@ -65,18 +65,27 @@ Note: If you already have the maximum of two access keys—active or inactive—
 
 ## Ansible playbook
 
+Now we have our AWS environment where it needs to be we can turn our attention towards the Ansible portion.
+
+I know this playbook could be made shorter and simplified with roles. However I wanted to give people the opportunity to use this playbook with Ansible when they're just getting started.
+
 ### Walkthrough
 
   - name: Create management interface
+    description: Create an network interface resource within AWS for our management within the region specified
 
   - name: Create outside interface
+    description: Create an network interface resource within AWS for our management within the region specified
 
   - name: Create inside interface
+    description: Create an network interface resource within AWS for our management within the region specified
 
   - name: allocate a new elastic IP inside a VPC in region
+    description: Allocate a public IP within our region to be assigned later to our device
 
   - name: allocate a new elastic IP inside a VPC in region
-
+    description: Allocate a public IP within our region to be assigned later to our device
+    
   - name: Deploy virtual ASA
 
   - name: get public IP for our interface
@@ -84,8 +93,7 @@ Note: If you already have the maximum of two access keys—active or inactive—
   - name: get public IP for our interface
 
   - name: Wait for SSH to come up
-
-  - name: Insert a line at the end of a file.
+    description: Self explanitory, wait for the ASA to boot and for SSH access before we can do our next config
 
   - name: configure ASA interface managememt
 
