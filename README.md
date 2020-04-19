@@ -49,6 +49,10 @@ Note: To understand AWS networking in detail theres a fantastic video from AWS i
 
 ### Keypair
 
+We'll also need to define a keypair to generate a certificate to have access to our device. This can be done by selecting the keypairs service within the EC2 menus under "Network & Security" and following the create keypair wizard
+
+![](asa-keypair.gif)
+
 ### Secret and Access keys
 
 Lastly if not already done so we need to create a IAM secret key and and access key. This can be done from the use the [security credentials page](https://console.aws.amazon.com/iam/home?#/security_credentials) and going to the "Access keys (access key ID and secret access key)" drop down then selecting generate new access key. As can be seen from the annimation below:
