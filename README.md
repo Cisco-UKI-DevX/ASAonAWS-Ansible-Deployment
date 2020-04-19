@@ -6,7 +6,7 @@ The virtual ASA appliance - ASAv for short has recently become very popular with
 
 ![](images/arch.png)
 
-That process for deploying within the cloud systems can be quite clunky, however is actually a very simple process which we intend to break down here for the reader and then look to automate through common tools such as ansible.
+That process for deploying within the cloud systems can be quite confusing to a beginner, however is actually a very simple process which we intend to break down here for the reader and then look to automate through common tools such as ansible.
 
 In this guide we’re going to show a way to automate much of that deployment to allow you to quickly spin up ASA capabilities as required and potentially even automate much of the actual on the box deployment for enabling features like Anyconnect VPN's. 
 
