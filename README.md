@@ -67,7 +67,7 @@ Note: If you already have the maximum of two access keys—active or inactive—
 
 Now we have our AWS environment where it needs to be we can turn our attention towards the Ansible portion.
 
-I know this playbook could be made shorter and simplified with roles. However I wanted to give people the opportunity to use this playbook with Ansible when they're just getting started.
+I know this playbook could be made shorter and simplified with roles. However I wanted to give people the opportunity to use this playbook with Ansible when they're just getting started. In the walkthrough section below we'll walk through each of the tasks taking place to configure our ASA using Ansible.
 
 ### Walkthrough
 
