@@ -18,13 +18,13 @@ access-list ACL-RemoteAcessVPN standard permit 172.31.0.0 255.255.0.0
 group-policy GP-RemoteAcessVPN internal
 group-policy GP-RemoteAcessVPN attributes
 wins-server none
-dns-server value 10.0.0.2 10.0.0.3
+dns-server value 8.8.8.8
 vpn-idle-timeout 86400
 vpn-session-timeout 86400
 vpn-tunnel-protocol ssl-client ssl-clientless
 split-tunnel-policy tunnelspecified
 split-tunnel-network-list value ACL-RemoteAcessVPN
-default-domain value techspacekh.com
+default-domain value ciscoasatest.com
 !
 webvpn
 anyconnect mtu 1300
@@ -32,8 +32,8 @@ anyconnect ssl keepalive 20
 anyconnect ask enable default anyconnect
 !
 !
-tunnel-group TechSpaceKH type remote-access
-tunnel-group TechSpaceKH general-attributes
+tunnel-group ciscoasatest type remote-access
+tunnel-group ciscoasatest general-attributes
 address-pool Pool-RemoteAcessVPN
 default-group-policy GP-RemoteAcessVPN
 tunnel-group TechSpaceKH webvpn-attributes
