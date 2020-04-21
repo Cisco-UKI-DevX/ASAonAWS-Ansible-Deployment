@@ -45,6 +45,12 @@ Outside: `172.31.0.254.0/24`
 
 Management: `172.31.0.255.0/24`
 
+### AMI
+
+We'll also need the AMI id of a valid ASA deployment for our playbook to go out and deploy the right image. I've made a custom one with a password set so that Ansible can easily access it without needing to supply a .pem file and with the anyconnect images preloaded also. If you'd like to use my image drop me a message and I can look to share it with you. Alternatively you can do a search for publically available AMI's and search for ASAv to find available images you can use.
+
+![](images/asa-ami.gif)
+
 **IMPORTANT:** Take a note of the subnetid beginning in "subnet-" we'll need that later for the playbook.
 
 > Note: To understand AWS networking in detail there is a fantastic video from AWS invent which is a well worth watching to understand the [fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
